@@ -2,6 +2,9 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 
+// routes import
+import userRouter from './routes/user.routes.js';
+
 // Creating an instance of the Express application
 const app = express();
 
@@ -25,5 +28,11 @@ app.use(express.static("public"));
 
 // Adding cookie parsing middleware to handle cookies in requests and responses
 app.use(cookieParser());
+
+
+
+
+// routes declaration
+app.use("/api/v1/users", userRouter);
 
 export {app};
