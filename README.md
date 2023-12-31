@@ -1,4 +1,4 @@
-# javascript-backend
+# Project Name: javascript-backend
 
 This project creates a javascript and nodejs backend
 
@@ -18,4 +18,21 @@ This project creates a javascript and nodejs backend
 ## FUNCTIONALITIES
 
 1. Register User
- 
+2. Login User
+3. Logout User
+4. Update User details
+5. Change password
+6. Update avatar image
+7. Update cover image
+8. Refresh Access token
+9. Get current user
+10. Get User Profile
+
+## Data Modelling 
+![Data Modelling Diagram!](/public/assets/database_diagram.jpg "Data Modelling Diagram")
+
+## API Documentation
+Link: not available
+
+## Live Demo
+[click here](https://javascript-backend.onrender.com)
