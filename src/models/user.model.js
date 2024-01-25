@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'; // For bearer token
 import bcrypt from 'bcrypt';
 
 const userSchema = mongoose.Schema({
-    userName: {
+    username: {
         type: String,
         require: true,
         unique: true,
@@ -53,7 +53,7 @@ userSchema.pre("save", async function (next) {
     if (!this.isModified("password"))
         return next();
 
-    this.password = bcrypt.hash(this.password, 10)
+    this.password = await bcrypt.hash(this.password, 10)
     next()
 });
 
@@ -66,8 +66,8 @@ userSchema.methods.generateAccessToken = function() {
         {
             _id: this._id,
             email: this.email,
-            userName: this.username,
-            fullName: this.fullname
+            username: this.username,
+            fullName: this.fullName
         },
         process.env.ACCESS_TOKEN_SECRET,
         {
